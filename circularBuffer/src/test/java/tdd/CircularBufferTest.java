@@ -1,5 +1,6 @@
 package tdd;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -112,6 +113,30 @@ public class CircularBufferTest {
         circularBuffer.add("a");
         circularBuffer.add("b");
         circularBuffer.get();
+        String actualValue2 = circularBuffer.get();
+
+        // Assert
+        assertEquals(expectedValue, actualValue2);
+    }
+
+    @Test
+    @DisplayName("7.สร้าง CircularBuffer, ด้วย maxSize = 7, ใส่ข้อมูล \"a\", \"b\", \"c\", \"d\", \"e\",\"f\", \"g\", \"h\" :  อ่านข้อมูลครั้งที่ 1 == \"b\"")
+    public void สร้าง_circularBuffer_ด้วย_maxSize_7_อ่านข้อมูลครั้งที่_1_ต้องเท่ากับ_b() {
+
+        //7.สร้าง CircularBuffer, ด้วย maxSize = 7, ใส่ข้อมูล "a", "b", "c", "d", "e","f", "g", "h" :  อ่านข้อมูลครั้งที่ 1 == "b"
+        // Arrange
+        String expectedValue = "b";
+        CircularBuffer circularBuffer = new CircularBuffer(7);
+
+        // Act
+        circularBuffer.add("a");
+        circularBuffer.add("b");
+        circularBuffer.add("c");
+        circularBuffer.add("d");
+        circularBuffer.add("e");
+        circularBuffer.add("f");
+        circularBuffer.add("g");
+        circularBuffer.add("h");
         String actualValue2 = circularBuffer.get();
 
         // Assert

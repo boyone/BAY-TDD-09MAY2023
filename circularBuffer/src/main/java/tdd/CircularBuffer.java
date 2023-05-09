@@ -32,6 +32,9 @@ public class CircularBuffer {
     }
 
     public String get() {
+        if(list.size() > maxSize){
+            pointer = 1;
+        }
         return list.get(pointer++);
     }
 }
