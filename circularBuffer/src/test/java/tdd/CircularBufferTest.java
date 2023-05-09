@@ -45,4 +45,23 @@ public class CircularBufferTest {
         // Assert
         assertEquals(expectedValue, circularBuffer.get());
     }
+
+    @Test
+    public void สร้าง_CircularBuffer_ใส่ข้อมูล_a_b_c_d_e_f_g_current_write_size_ต้องเท่ากับ_7() {
+        // Arrange
+        int expectedValue = 7;
+        CircularBuffer circularBuffer = new CircularBuffer();
+
+        // Act
+        circularBuffer.add("a");
+        circularBuffer.add("b");
+        circularBuffer.add("c");
+        circularBuffer.add("d");
+        circularBuffer.add("e");
+        circularBuffer.add("f");
+        circularBuffer.add("g");
+
+        // Assert
+        assertEquals(expectedValue, circularBuffer.writeSize());
+    }
 }
