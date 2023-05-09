@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CircularBufferTest {
 
     @Test
-    public void สร้าง_CircularBuffer_ครั้งแรกแล้ว_size_ต้องเท่ากับ_0() {
+    public void สร้าง_CircularBuffer_ครั้งแรกแล้ว_write_size_ต้องเท่ากับ_0() {
         // Arrange
         int expectedValue = 0;
         CircularBuffer circularBuffer = new CircularBuffer();
