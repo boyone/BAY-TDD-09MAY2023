@@ -2,13 +2,36 @@ package tdd;
 
 public class CircularBuffer {
 
-    private int size = 0;
+    private String[] buffer = new String[7];
+    private int currentReadIndex = 0;
+    private int currentWriteIndex = 0;
 
-    public int size() {
-        return size;
+    public int readSize() {
+        return currentReadIndex;
+    }
+
+    public int writeSize() {
+        return currentWriteIndex;
     }
 
     public void add(String value) {
-        size++;
+
+        if (currentWriteIndex == 7) {
+            currentWriteIndex = 0;
+        }
+
+        buffer[currentWriteIndex] = value;
+        currentWriteIndex += 1;
+
     }
+
+    public String get() {
+        if (currentReadIndex == 7) {
+            currentReadIndex = 0;
+        }
+
+        return buffer[currentReadIndex++];
+    }
+
+
 }
