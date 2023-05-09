@@ -25,16 +25,16 @@ public class CircularBuffer {
     }
 
     public void add(String value) {
-        list.add(value);
-        if (size < maxSize) {
-            size++;
-        }
+    	list.add(value);
+    	if (size < maxSize) {
+    		size++;
+    	}
+    	if(list.size() > maxSize){
+    		pointer+=1;
+    	}
     }
 
     public String get() {
-        if(list.size() > maxSize){
-            pointer = 1;
-        }
         return list.get(pointer++);
     }
 }

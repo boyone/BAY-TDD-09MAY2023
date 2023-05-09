@@ -142,4 +142,28 @@ public class CircularBufferTest {
         // Assert
         assertEquals(expectedValue, actualValue2);
     }
+    
+    @Test
+    @DisplayName("8.สร้าง CircularBuffer, ด้วย maxSize = 7, ใส่ข้อมูล \"a\", \"b\", \"c\", \"d\", \"e\",\"f\", \"g\", \"h\" \"i\" :  อ่านข้อมูลครั้งที่ 1 == \"c\"")
+    public void dataOverflowMaxSizeBy2ResultC() {
+
+    	// Arrange
+        String expectedValue = "c";
+        CircularBuffer circularBuffer = new CircularBuffer(7);
+
+        // Act
+        circularBuffer.add("a");
+        circularBuffer.add("b");
+        circularBuffer.add("c");
+        circularBuffer.add("d");
+        circularBuffer.add("e");
+        circularBuffer.add("f");
+        circularBuffer.add("g");
+        circularBuffer.add("h");
+        circularBuffer.add("i");
+        String actualValue2 = circularBuffer.get();
+
+        // Assert
+        assertEquals(expectedValue, actualValue2);
+    }
 }
