@@ -84,6 +84,7 @@ public class CircularBufferTest {
         // Assert
         assertEquals(expectedValue, actualValue);
     }
+
     @Test
     public void สร้าง_circularBuffer_ใส่ข้อมูล_d_c_get_ต้องเท่ากับ_d() {
         // Arrange
@@ -97,5 +98,23 @@ public class CircularBufferTest {
 
         // Assert
         assertEquals(expectedValue, actualValue);
+    }
+
+    @Test
+    public void สร้าง_circularBuffer_ใส่ข้อมูล_a_b_get_ครุ้ง_2_ต้องเท่ากับ_b() {
+
+        //6.สร้าง CircularBuffer, ใส่ข้อมูล "a", "b" : อ่านข้อมูลครั้งที่ 2 == "b"
+        // Arrange
+        String expectedValue = "b";
+        CircularBuffer circularBuffer = new CircularBuffer();
+
+        // Act
+        circularBuffer.add("a");
+        circularBuffer.add("b");
+        circularBuffer.get();
+        String actualValue2 = circularBuffer.get();
+
+        // Assert
+        assertEquals(expectedValue, actualValue2);
     }
 }
