@@ -7,7 +7,10 @@ import java.util.List;
 public class CircularBuffer {
     private int size = 0;
     private int maxSize;
-    private List<String> list=new ArrayList<>();
+
+    private int pointer = 0;
+
+    private List<String> list = new ArrayList<>();
 
     public CircularBuffer(int maxSize) {
         this.maxSize = maxSize;
@@ -29,6 +32,6 @@ public class CircularBuffer {
     }
 
     public String get() {
-        return list.get(0);
+        return list.get(pointer++);
     }
 }
