@@ -20,14 +20,14 @@ public class CircularBufferTest {
     }
 
     @Test
-    public void สร้าง_CircularBuffer_ใส่ข้อมูล_a_size_ต้องเท่ากับ_1() {
+    public void สร้าง_CircularBuffer_ใส่ข้อมูล_a_write_size_ต้องเท่ากับ_1() {
         // Arrange
         int expectedValue = 1;
         CircularBuffer circularBuffer = new CircularBuffer();
 
         // Act
         circularBuffer.add("a");
-        int actualValue = circularBuffer.readSize();
+        int actualValue = circularBuffer.writeSize();
 
         // Assert
         assertEquals(expectedValue, actualValue);
