@@ -10,10 +10,6 @@ public class CircularBuffer {
         return currentReadIndex;
     }
 
-    public int writeSize() {
-        return currentWriteIndex;
-    }
-
     public void add(String value) {
 
         if (currentWriteIndex == 7) {
