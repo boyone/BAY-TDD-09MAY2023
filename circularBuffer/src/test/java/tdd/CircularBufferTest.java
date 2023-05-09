@@ -47,4 +47,26 @@ public class CircularBufferTest {
         // Assert
         assertEquals(expectedValue, actualValue);
     }
+
+    @Test
+    public void สร้าง_circularBuffer_maxSize_7() {
+        // Arrange
+        int expectedValue = 7;
+        CircularBuffer circularBuffer = new CircularBuffer(7);
+
+        // Act
+        circularBuffer.add("a");
+        circularBuffer.add("b");
+        circularBuffer.add("c");
+        circularBuffer.add("d");
+        circularBuffer.add("e");
+        circularBuffer.add("f");
+        circularBuffer.add("g");
+        circularBuffer.add("h");
+
+        int actualValue = circularBuffer.size();
+
+        // Assert
+        assertEquals(expectedValue, actualValue);
+    }
 }
