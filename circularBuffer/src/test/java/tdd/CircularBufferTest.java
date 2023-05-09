@@ -6,6 +6,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CircularBufferTest {
 
+
+    @Test
+    public void สร้าง_CircularBuffer_max_size_ต้องเท่ากับ_7() {
+        // Arrange
+        int expectedValue = 7;
+        CircularBuffer circularBuffer = new CircularBuffer();
+
+        // Act
+        int actualValue = circularBuffer.getMaxSize();
+
+        // Assert
+        assertEquals(expectedValue, actualValue);
+    }
+
     @Test
     public void สร้าง_CircularBuffer_ครั้งแรกแล้ว_current_write_index_ต้องเท่ากับ_0() {
         // Arrange

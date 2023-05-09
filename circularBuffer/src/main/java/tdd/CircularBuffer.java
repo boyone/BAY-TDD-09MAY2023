@@ -5,6 +5,11 @@ public class CircularBuffer {
     private String[] buffer = new String[7];
     private int currentReadIndex = 0;
     private int currentWriteIndex = 0;
+    private int maxSize = 7;
+
+    public int getMaxSize() {
+        return maxSize;
+    }
 
     public int currentWriteIndex() {
         return currentWriteIndex;
@@ -12,7 +17,7 @@ public class CircularBuffer {
 
     public void add(String value) {
 
-        if (currentWriteIndex == 7) {
+        if (currentWriteIndex == maxSize) {
             currentWriteIndex = 0;
         }
 
@@ -22,7 +27,7 @@ public class CircularBuffer {
     }
 
     public String get() {
-        if (currentReadIndex == 7) {
+        if (currentReadIndex == maxSize) {
             currentReadIndex = 0;
         }
 
