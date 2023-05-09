@@ -1,11 +1,14 @@
 package tdd;
 
+
 public class CircularBuffer {
+    private int size = 0;
+
     public int size() {
-        return 0;
+        return size;
     }
 
     public void add(String value) {
-
+        size++;
     }
 }
