@@ -7,27 +7,27 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CircularBufferTest {
 
     @Test
-    public void สร้าง_CircularBuffer_ครั้งแรกแล้ว_write_size_ต้องเท่ากับ_0() {
+    public void สร้าง_CircularBuffer_ครั้งแรกแล้ว_current_write_index_ต้องเท่ากับ_0() {
         // Arrange
         int expectedValue = 0;
         CircularBuffer circularBuffer = new CircularBuffer();
 
         // Act
-        int actualValue = circularBuffer.readSize();
+        int actualValue = circularBuffer.currentWriteIndex();
 
         // Assert
         assertEquals(expectedValue, actualValue);
     }
 
     @Test
-    public void สร้าง_CircularBuffer_ใส่ข้อมูล_a_write_size_ต้องเท่ากับ_1() {
+    public void สร้าง_CircularBuffer_ใส่ข้อมูล_a_current_write_index_ต้องเท่ากับ_1() {
         // Arrange
         int expectedValue = 1;
         CircularBuffer circularBuffer = new CircularBuffer();
 
         // Act
         circularBuffer.add("a");
-        int actualValue = circularBuffer.writeSize();
+        int actualValue = circularBuffer.currentWriteIndex();
 
         // Assert
         assertEquals(expectedValue, actualValue);
@@ -47,7 +47,7 @@ public class CircularBufferTest {
     }
 
     @Test
-    public void สร้าง_CircularBuffer_ใส่ข้อมูล_a_b_c_d_e_f_g_current_write_size_ต้องเท่ากับ_7() {
+    public void สร้าง_CircularBuffer_ใส่ข้อมูล_a_b_c_d_e_f_g_current_current_write_index_ต้องเท่ากับ_7() {
         // Arrange
         int expectedValue = 7;
         CircularBuffer circularBuffer = new CircularBuffer();
@@ -62,7 +62,7 @@ public class CircularBufferTest {
         circularBuffer.add("g");
 
         // Assert
-        assertEquals(expectedValue, circularBuffer.writeSize());
+        assertEquals(expectedValue, circularBuffer.currentWriteIndex());
     }
 
     @Test
@@ -90,5 +90,25 @@ public class CircularBufferTest {
 
         // Assert
         assertEquals(expectedValue, result);
+    }
+
+    @Test
+    public void สร้าง_CircularBuffer_ใส่ข้อมูล_a_b_c_d_e_f_g_h_current_current_write_index_ต้องเท่ากับ_1() {
+        // Arrange
+        int expectedValue = 1;
+        CircularBuffer circularBuffer = new CircularBuffer();
+
+        // Act
+        circularBuffer.add("a");
+        circularBuffer.add("b");
+        circularBuffer.add("c");
+        circularBuffer.add("d");
+        circularBuffer.add("e");
+        circularBuffer.add("f");
+        circularBuffer.add("g");
+        circularBuffer.add("h");
+
+        // Assert
+        assertEquals(expectedValue, circularBuffer.currentWriteIndex());
     }
 }

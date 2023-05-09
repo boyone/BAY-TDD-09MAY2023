@@ -6,11 +6,7 @@ public class CircularBuffer {
     private int currentReadIndex = 0;
     private int currentWriteIndex = 0;
 
-    public int readSize() {
-        return currentReadIndex;
-    }
-
-    public int writeSize() {
+    public int currentWriteIndex() {
         return currentWriteIndex;
     }
 
@@ -32,6 +28,4 @@ public class CircularBuffer {
 
         return buffer[currentReadIndex++];
     }
-
-
 }
