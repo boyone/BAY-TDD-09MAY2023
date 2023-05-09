@@ -18,4 +18,18 @@ public class CircularBufferTest {
         // Assert
         assertEquals(expectedValue, actualValue);
     }
+
+    @Test
+    public void สร้าง_CircularBuffer_ใส่ข้อมูล_a_size_ต้องเท่ากับ_1() {
+        // Arrange
+        int expectedValue = 1;
+        CircularBuffer circularBuffer = new CircularBuffer();
+
+        // Act
+        circularBuffer.add("a");
+        int actualValue = circularBuffer.size();
+
+        // Assert
+        assertEquals(expectedValue, actualValue);
+    }
 }
