@@ -48,4 +48,18 @@ public class RomanNumberTest {
         Assertions.assertEquals(expectedValue, actual);
     }
 
+    @Test
+    public void RomanNumber_Test_Case_ใส่_Input_เป็น_L_ผลลัพทธ์_ต้องเป็น_50() {
+
+        // Arrange
+        int expectedValue = 50;
+
+        // Act
+        RomanNumber romanNumber = new RomanNumber();
+        Integer actual = romanNumber.convertToNumber("L");
+
+        // Assert
+        Assertions.assertEquals(expectedValue, actual);
+    }
+
 }
