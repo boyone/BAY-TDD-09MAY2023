@@ -9,6 +9,9 @@ public class RomanNumber {
         if (input == 2) {
             output = "II";
         }
+        if (input == 3) {
+            output = "III";
+        }
 
         return output;
     }
