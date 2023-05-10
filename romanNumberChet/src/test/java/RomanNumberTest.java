@@ -23,12 +23,29 @@ public class RomanNumberTest {
     }
 
     @Test
-    @DisplayName("2. roman number of 1 should be II")
+    @DisplayName("2. roman number of 2 should be II")
     void romanNumber_of_2_should_be_II() {
 
         // Arrange
         int inout = 2;
         String expectedResult = "II";
+        RomanNumber romanNumber = new RomanNumber();
+
+        // Act
+        String actualResult = romanNumber.covert(inout);
+
+        // Assert
+        assertEquals(expectedResult, actualResult);
+
+    }
+
+    @Test
+    @DisplayName("3. roman number of 3 should be III")
+    void romanNumber_of_3_should_be_III() {
+
+        // Arrange
+        int inout = 3;
+        String expectedResult = "III";
         RomanNumber romanNumber = new RomanNumber();
 
         // Act
