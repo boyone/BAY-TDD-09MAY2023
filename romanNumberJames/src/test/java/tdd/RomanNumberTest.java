@@ -34,4 +34,18 @@ public class RomanNumberTest {
         Assertions.assertEquals(expectedValue, actual);
     }
 
+    @Test
+    public void RomanNumber_Test_Case_ใส่_Input_เป็น_X_ผลลัพทธ์_ต้องเป็น_10() {
+
+        // Arrange
+        int expectedValue = 10;
+
+        // Act
+        RomanNumber romanNumber = new RomanNumber();
+        Integer actual = romanNumber.convertToNumber("X");
+
+        // Assert
+        Assertions.assertEquals(expectedValue, actual);
+    }
+
 }
