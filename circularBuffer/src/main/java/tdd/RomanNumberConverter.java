@@ -27,6 +27,7 @@ public class RomanNumberConverter {
 
         while (number > 0) {
             if (number >= romanValues[i]) {
+
                 romanNumber.append(romanSymbols[i]);
                 number -= romanValues[i];
             } else {
