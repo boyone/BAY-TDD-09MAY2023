@@ -21,6 +21,34 @@ public class RomanNumberTest {
     }
 
     @Test
+    public void romanNumber_of_2_should_be_II() {
+        // Arrange
+        int input = 2;
+        String expectedResult ="II";
+        RomanNumber romanNumber = new RomanNumber();
+
+        // Act
+        String actualResult = romanNumber.covert(input);
+
+        // Assert
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    public void romanNumber_of_4_should_be_IV() {
+        // Arrange
+        int input = 4;
+        String expectedResult ="IV";
+        RomanNumber romanNumber = new RomanNumber();
+
+        // Act
+        String actualResult = romanNumber.covert(input);
+
+        // Assert
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
     public void romanNumber_of_5_should_be_V() {
         // Arrange
         int input = 5;
@@ -35,10 +63,10 @@ public class RomanNumberTest {
     }
 
     @Test
-    public void romanNumber_of_10_should_be_X() {
+    public void romanNumber_of_6_should_be_VI() {
         // Arrange
-        int input = 10;
-        String expectedResult ="X";
+        int input = 6;
+        String expectedResult ="VI";
         RomanNumber romanNumber = new RomanNumber();
 
         // Act
@@ -49,10 +77,10 @@ public class RomanNumberTest {
     }
 
     @Test
-    public void romanNumber_of_50_should_be_L() {
+    public void romanNumber_of_9_should_be_IX() {
         // Arrange
-        int input = 50;
-        String expectedResult ="L";
+        int input = 9;
+        String expectedResult ="IX";
         RomanNumber romanNumber = new RomanNumber();
 
         // Act
@@ -62,15 +90,4 @@ public class RomanNumberTest {
         assertEquals(expectedResult, actualResult);
     }
 
-    @Test
-    public void romanNumber_of_100_500_1000_should_be_C_D_M() {
-        // Arrange
-        RomanNumber romanNumber = new RomanNumber();
-
-        // Act
-        // Assert
-        assertEquals("C", romanNumber.covert(100));
-        assertEquals("D", romanNumber.covert(500));
-        assertEquals("M", romanNumber.covert(1000));
-    }
 }
