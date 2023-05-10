@@ -1,23 +1,32 @@
 package tdd;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
 public class RomanNumber {
 
+    TreeMap<Integer, String> mapRomanMain = new TreeMap<Integer, String>();
+
+    public RomanNumber() {
+        mapRomanMain.put(1, "I");
+        mapRomanMain.put(5, "V");
+        mapRomanMain.put(10, "X");
+        mapRomanMain.put(50, "L");
+        mapRomanMain.put(100, "C");
+        mapRomanMain.put(500, "D");
+        mapRomanMain.put(1000, "M");
+    }
+
     String covert(int input) {
-        if (input == 1) {
-            return "I";
-        } else if (input == 5) {
-            return "V";
-        } else if (input == 10) {
-            return "X";
-        } else if (input == 50) {
-            return "L";
-        } else if (input == 100) {
-            return "C";
-        } else if (input == 500) {
-            return "D";
-        } else if (input == 1000) {
-            return "M";
-        } else if (input == 2) {
+
+        Integer itemKey = mapRomanMain.floorKey(input);
+
+        if (itemKey == input) {
+            return mapRomanMain.get(itemKey);
+        }
+
+        if (input == 2) {
             return "II";
         } else if (input == 3) {
             return "III";
