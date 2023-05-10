@@ -38,10 +38,8 @@ public class RomanNumber {
 
     public String convertToRomanNumber(Integer number) {
 
-
         AtomicReference<Integer> tempNumber = new AtomicReference<>(number);
         StringBuilder romanBuilder = new StringBuilder();
-
 
         while (tempNumber.get() > 0) {
             for (Map.Entry<String, Integer> entry : romanNumberMapping.entrySet()) {
@@ -55,7 +53,7 @@ public class RomanNumber {
                 }
             }
         }
-        return romanBuilder.toString();
+        return toFormatRomanNumber(romanBuilder.toString());
     }
 
     public String toFormatRomanNumber(String plainCalculateRomanNumber) {
@@ -63,34 +61,61 @@ public class RomanNumber {
         StringBuilder newRomanStr = new StringBuilder();
         StringBuilder tempBuilder = new StringBuilder();
         int count = 0;
+        int countSameLetter = 0;
         char currentChar = '-';
+        char startChar = '-';
         for (char romanNum : plainCalculateRomanNumber.toCharArray()) {
             if (count == 0) {
-
                 currentChar = romanNum;
+                startChar = romanNum;
                 tempBuilder.append(romanNum);
                 count++;
-            } else if (count == 3) {
-                if (currentChar == romanNum) {
+            } else if (countSameLetter == 3) {
+                if (currentChar == romanNum && romanNumberMapping.get(String.valueOf(startChar)) > romanNumberMapping.get(String.valueOf(romanNum))) {
+
+                    tempBuilder.append(romanNum);
+
+                    newRomanStr.append(currentChar + romanNumberNextKeyMapping.get(String.valueOf(startChar)));
+
+                    tempBuilder = new StringBuilder();
                     count = 0;
+                    countSameLetter = 0;
+
+                } else if (currentChar == romanNum) {
+                    count = 0;
+                    countSameLetter = 0;
+
                     tempBuilder.append(romanNum);
 
                     String nextKey = romanNumberNextKeyMapping.get(String.valueOf(romanNum));
                     newRomanStr.append(romanNum + nextKey);
-//                    newRomanStr.append(tempBuilder);
 
                     tempBuilder = new StringBuilder();
                 } else {
                     count = 0;
+                    countSameLetter = 0;
+                    currentChar = '-';
+                    startChar = '-';
                     newRomanStr.append(tempBuilder);
                     tempBuilder = new StringBuilder();
+
                 }
             } else {
                 if (currentChar == romanNum) {
                     tempBuilder.append(romanNum);
+                    countSameLetter++;
                     count++;
+                    currentChar = romanNum;
+                } else if (romanNumberMapping.get(String.valueOf(startChar)) > romanNumberMapping.get(String.valueOf(romanNum))) {
+                    tempBuilder.append(romanNum);
+                    count++;
+                    countSameLetter++;
+                    currentChar = romanNum;
                 } else {
                     count = 0;
+                    countSameLetter = 0;
+                    currentChar = '-';
+                    startChar = '-';
                     tempBuilder.append(romanNum);
                     newRomanStr.append(tempBuilder);
                     tempBuilder = new StringBuilder();
@@ -98,8 +123,13 @@ public class RomanNumber {
             }
         }
 
-        if (count == 3) {
-            newRomanStr.append(tempBuilder);
+        if (countSameLetter == 3) {
+            if (startChar == currentChar) {
+                String nextKey = romanNumberNextKeyMapping.get(String.valueOf(currentChar));
+                newRomanStr.append(currentChar + nextKey);
+            } else {
+                newRomanStr.append(romanNumberNextKeyMapping.get(String.valueOf(startChar)) + currentChar);
+            }
         } else if (count != 0) {
             newRomanStr.append(tempBuilder);
         }
