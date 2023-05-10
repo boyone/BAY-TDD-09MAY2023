@@ -5,8 +5,10 @@ public class RomanNumber {
         String result = "I";
         if (input == 1) {
             result = "I";
-        } else {
+        } else if (input == 5){
             result = "V";
+        } else if (input == 10) {
+            result = "X";
         }
         return result;
     }
