@@ -14,6 +14,19 @@ public class RomanNumber {
         put(1000, "M");
     }};
     public String covert(int input) {
+
+        int[] deviders = {100, 10, 1};
+
+        for (int divider: deviders) {
+            if (input >= (1 * divider) && input <= (3* divider)) {
+                String returnString = "";
+                for (int i = 0; i < input ; i += divider){
+                    returnString += romanNumberMapping.get(divider);
+                }
+                return returnString;
+            }
+        }
+
         return romanNumberMapping.get(input);
     }
 }
