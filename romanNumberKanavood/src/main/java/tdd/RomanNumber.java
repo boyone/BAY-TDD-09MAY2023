@@ -4,7 +4,7 @@ public class RomanNumber {
     public String covert(int input) {
         String roman = "";
         if(input/1000 >= 1) {
-            roman = getDigit(input/1000, roman, "", "", "M",1000);
+            roman = getThousand(input/1000, roman, "M");
             input = input%1000;
         }
         if(input/100 >= 1) {
@@ -34,4 +34,12 @@ public class RomanNumber {
         }
         return roman;
     }
+
+    private static String getThousand(int input, String roman,String one) {
+        for(int i = 0 ; i < input ; i++) {
+            roman = roman + one;
+        }
+        return roman;
+    }
+
 }

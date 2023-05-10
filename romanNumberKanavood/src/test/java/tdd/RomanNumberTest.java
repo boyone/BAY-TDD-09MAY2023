@@ -202,4 +202,18 @@ public class RomanNumberTest {
         // Assert
         assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    public void romanNumber_of_3999_should_be_MMMCMXCIX() {
+        // Arrange
+        int input = 3999;
+        String expectedResult ="MMMCMXCIX";
+        RomanNumber romanNumber = new RomanNumber();
+
+        // Act
+        String actualResult = romanNumber.covert(input);
+
+        // Assert
+        assertEquals(expectedResult, actualResult);
+    }
 }
