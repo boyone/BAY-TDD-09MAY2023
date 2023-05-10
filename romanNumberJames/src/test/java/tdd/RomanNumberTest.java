@@ -103,4 +103,75 @@ public class RomanNumberTest {
         // Assert
         Assertions.assertEquals(expectedValue, actual);
     }
+
+    @Test
+    public void RomanNumber_Test_Case_ใส่_Input_เป็น_1_ผลลัพธ์_ต้องเป็น_I() {
+
+        // Arrange
+        String expectedValue = "I";
+
+        // Act
+        RomanNumber romanNumber = new RomanNumber();
+        String actual = romanNumber.convertToRomanNumber(1);
+
+        // Assert
+        Assertions.assertEquals(expectedValue, actual);
+    }
+
+
+    @Test
+    public void RomanNumber_Test_Case_ใส่_Input_เป็น_2_ผลลัพธ์_ต้องเป็น_II() {
+
+        // Arrange
+        String expectedValue = "II";
+
+        // Act
+        RomanNumber romanNumber = new RomanNumber();
+        String actual = romanNumber.convertToRomanNumber(2);
+
+        // Assert
+        Assertions.assertEquals(expectedValue, actual);
+    }
+
+    @Test
+    public void RomanNumber_Test_Case_ใส่_Input_เป็น_5_ผลลัพธ์_ต้องเป็น_V() {
+
+        // Arrange
+        String expectedValue = "V";
+
+        // Act
+        RomanNumber romanNumber = new RomanNumber();
+        String actual = romanNumber.convertToRomanNumber(5);
+
+        // Assert
+        Assertions.assertEquals(expectedValue, actual);
+    }
+
+    @Test
+    public void RomanNumber_Test_Case_ใส่_Input_เป็น_9_ผลลัพธ์_ต้องเป็น_IX() {
+
+        // Arrange
+        String expectedValue = "IX";
+
+        // Act
+        RomanNumber romanNumber = new RomanNumber();
+        String actual = romanNumber.convertToRomanNumber(9);
+
+        // Assert
+        Assertions.assertEquals(expectedValue, actual);
+    }
+
+    @Test
+    public void RomanNumber_toFormatRomanNumber_Test_Case_ใส่_Input_เป็น_IIII_ผลลัพธ์_ต้องเป็น_IV() {
+
+        // Arrange
+        String expectedValue = "IV";
+
+        // Act
+        RomanNumber romanNumber = new RomanNumber();
+        String actual = romanNumber.toFormatRomanNumber("IIII");
+
+        // Assert
+        Assertions.assertEquals(expectedValue, actual);
+    }
 }
