@@ -20,4 +20,19 @@ public class RomanNumberTest {
         assertEquals(expectedResult, actualResult);
     }
 
+    @Test
+    public void romanNumber_of_5_should_be_V() {
+        // Arrange
+        int input = 5;
+        String expectedResult = "V";
+        RomanNumber romanNumber = new RomanNumber();
+
+        // Act
+        String actualResult = romanNumber.convert(input);
+
+        // Assert
+        assertEquals(expectedResult, actualResult);
+    }
+
+
 }
