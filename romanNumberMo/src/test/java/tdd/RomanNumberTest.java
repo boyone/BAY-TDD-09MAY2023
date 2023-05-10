@@ -47,4 +47,22 @@ public class RomanNumberTest {
         // Assert
         assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    public void romanNumber_of_100_500_1000_should_be_C_D_M() {
+        // Arrange
+        RomanNumber romanNumber = new RomanNumber();
+
+        // Act
+        // Assert
+        assertEquals("C", romanNumber.convert(100));
+        assertEquals("D", romanNumber.convert(500));
+        assertEquals("M", romanNumber.convert(1000));
+    }
+
+    @Test
+    public  void romanNumber_of_2_3_should_be_II_III() {
+
+    }
+
 }
