@@ -2,6 +2,6 @@ package tdd;
 
 public class RomanNumber {
     public String convert(int input) {
-        return null;
+        return "I";
     }
 }
