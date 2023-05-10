@@ -89,4 +89,18 @@ public class RomanNumberTest {
         // Assert
         Assertions.assertEquals(expectedValue, actual);
     }
+
+    @Test
+    public void RomanNumber_Test_Case_ใส่_Input_เป็น_M_ผลลัพทธ์_ต้องเป็น_1000() {
+
+        // Arrange
+        int expectedValue = 1000;
+
+        // Act
+        RomanNumber romanNumber = new RomanNumber();
+        Integer actual = romanNumber.convertToNumber("M");
+
+        // Assert
+        Assertions.assertEquals(expectedValue, actual);
+    }
 }
