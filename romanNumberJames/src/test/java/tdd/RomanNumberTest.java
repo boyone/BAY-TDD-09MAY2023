@@ -76,5 +76,17 @@ public class RomanNumberTest {
         Assertions.assertEquals(expectedValue, actual);
     }
 
+    @Test
+    public void RomanNumber_Test_Case_ใส่_Input_เป็น_D_ผลลัพทธ์_ต้องเป็น_500() {
 
+        // Arrange
+        int expectedValue = 500;
+
+        // Act
+        RomanNumber romanNumber = new RomanNumber();
+        Integer actual = romanNumber.convertToNumber("D");
+
+        // Assert
+        Assertions.assertEquals(expectedValue, actual);
+    }
 }
