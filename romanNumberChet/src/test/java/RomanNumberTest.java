@@ -1,5 +1,4 @@
-package tdd;
-
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -7,17 +6,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RomanNumberTest {
 
     @Test
-    public void romanNumber_of_1_should_be_I() {
+    @DisplayName("1. Roman Numeral is I")
+    void romanNumber_of_1_should_be_I() {
+
         // Arrange
-        int input = 1;
-        String expectedResult ="I";
+        int inout = 1;
+        String expectedResult = "I";
         RomanNumber romanNumber = new RomanNumber();
 
         // Act
-        String actualResult = romanNumber.covert(input);
+        String actualResult = romanNumber.covert(inout);
 
         // Assert
         assertEquals(expectedResult, actualResult);
-    }
 
+    }
 }
