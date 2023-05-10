@@ -19,4 +19,19 @@ public class RomanNumberTest {
         // Assert
         Assertions.assertEquals(expectedValue, actual);
     }
+
+    @Test
+    public void RomanNumber_Test_Case_ใส่_Input_เป็น_V_ผลลัพทธ์_ต้องเป็น_5() {
+
+        // Arrange
+        int expectedValue = 5;
+
+        // Act
+        RomanNumber romanNumber = new RomanNumber();
+        Integer actual = romanNumber.convertToNumber("V");
+
+        // Assert
+        Assertions.assertEquals(expectedValue, actual);
+    }
+
 }
