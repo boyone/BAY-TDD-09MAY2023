@@ -49,6 +49,20 @@ public class RomanNumberTest {
     }
 
     @Test
+    public void romanNumber_of_5_should_be_V() {
+        // Arrange
+        int input = 5;
+        String expectedResult ="V";
+        RomanNumber romanNumber = new RomanNumber();
+
+        // Act
+        String actualResult = romanNumber.covert(input);
+
+        // Assert
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
     public void romanNumber_of_6_should_be_VI() {
         // Arrange
         int input = 6;
