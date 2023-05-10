@@ -49,7 +49,7 @@ public class RomanNumberTest {
     }
 
     @Test
-    public void romanNumber_of_4_should_be_VI() {
+    public void romanNumber_of_6_should_be_VI() {
         // Arrange
         int input = 6;
         String expectedResult ="VI";
@@ -63,7 +63,7 @@ public class RomanNumberTest {
     }
 
     @Test
-    public void romanNumber_of_4_should_be_IX() {
+    public void romanNumber_of_9_should_be_IX() {
         // Arrange
         int input = 9;
         String expectedResult ="IX";
