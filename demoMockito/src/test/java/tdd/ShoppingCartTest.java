@@ -1,9 +1,11 @@
 package tdd;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.mockito.Mockito.when;
 
 public class ShoppingCartTest {
 
@@ -11,7 +13,10 @@ public class ShoppingCartTest {
     public void stubTest() {
         // Arrange
         ProductDetail expectedResult = new ProductDetail(1, "adidas", 500, 1000);
-        ShoppingCart shopping = new ShoppingCart();
+
+        Catalog catalog = Mockito.mock(Catalog.class);
+        when(catalog.find(1)).thenReturn(new Product("adidas",500));
+        ShoppingCart shopping = new ShoppingCart(catalog);
 
         // Act
         ProductDetail actualResult = shopping.detail(1, 2);
