@@ -7,7 +7,7 @@ public class RomanNumberTest {
 
 
     @Test
-    public void RomanNumber_Test_Case_ใส่_Input_เป็น_I_RESULT_ต้องเป็น_1() {
+    public void RomanNumber_Test_Case_ใส่_Input_เป็น_I_ผลลัพธ์_ต้องเป็น_1() {
 
         // Arrange
         int expectedValue = 1;
