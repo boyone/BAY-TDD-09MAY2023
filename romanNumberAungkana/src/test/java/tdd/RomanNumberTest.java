@@ -104,12 +104,39 @@ public class RomanNumberTest {
         assertEquals(actualResult, expectedResult);
     }
 
-
     @Test
     public void romanNumber_of_3_should_be_III() {
         // Arrange
         int input = 3;
         String expectedResult = "III";
+        RomanNumber romanNumber = new RomanNumber();
+
+        // Act
+        String actualResult = romanNumber.covert(input);
+
+        // Assert
+        assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void romanNumber_of_20_should_be_XX() {
+        // Arrange
+        int input = 20;
+        String expectedResult = "XX";
+        RomanNumber romanNumber = new RomanNumber();
+
+        // Act
+        String actualResult = romanNumber.covert(input);
+
+        // Assert
+        assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void romanNumber_of_30_should_be_XXX() {
+        // Arrange
+        int input = 30;
+        String expectedResult = "XXX";
         RomanNumber romanNumber = new RomanNumber();
 
         // Act

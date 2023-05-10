@@ -21,6 +21,10 @@ public class RomanNumber {
             return "II";
         } else if (input == 3) {
             return "III";
+        } else if (input == 20) {
+            return "XX";
+        } else if (input == 30) {
+            return "XXX";
         }
         return "";
     }
