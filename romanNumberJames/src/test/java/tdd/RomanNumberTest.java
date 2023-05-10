@@ -62,4 +62,19 @@ public class RomanNumberTest {
         Assertions.assertEquals(expectedValue, actual);
     }
 
+    @Test
+    public void RomanNumber_Test_Case_ใส่_Input_เป็น_C_ผลลัพทธ์_ต้องเป็น_100() {
+
+        // Arrange
+        int expectedValue = 100;
+
+        // Act
+        RomanNumber romanNumber = new RomanNumber();
+        Integer actual = romanNumber.convertToNumber("C");
+
+        // Assert
+        Assertions.assertEquals(expectedValue, actual);
+    }
+
+
 }
