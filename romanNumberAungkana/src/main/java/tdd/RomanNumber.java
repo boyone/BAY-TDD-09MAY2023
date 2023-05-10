@@ -1,6 +1,8 @@
+package tdd;
+
 public class RomanNumber {
 
-    String covent(int input){
+    String covert(int input){
         return "I";
     }
     
