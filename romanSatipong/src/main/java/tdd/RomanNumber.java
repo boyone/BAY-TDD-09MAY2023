@@ -2,6 +2,10 @@ package tdd;
 
 public class RomanNumber {
     public String convert(int num){
-        return "I";
+        String roman = "";
+        for (int i = 1; i <= num ; i++) {
+            roman += "I";
+        }
+        return roman;
     }
 }
